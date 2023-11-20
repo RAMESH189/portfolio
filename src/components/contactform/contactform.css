@@ -1,0 +1,30 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1rem;
+    margin: auto;
+    max-width: 600px;
+}
+
+label{
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+input, textarea {
+ margin-bottom: 1rem;
+ padding: 10px 18px;
+ font-size: 1.2rem;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ border-radius: 5px;
+ background: hsla(233, 36%, 23%, 1);
+ color: white;
+ border-color: rgb(13, 13, 58);
+ 
+}
+
+input,
+textarea:focus {
+    outline: none;
+}

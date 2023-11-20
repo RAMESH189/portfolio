@@ -1,0 +1,8 @@
+export { default as Navbar } from '../components/navbar/Navbar'
+export { default as HeroImage } from '../components/hero/HeroImage'
+export { default as Footer } from '../components/footer/Footer'
+export { default as HeroImage2 } from '../components/hero2/HeroImage2'
+export { default as WorkCard } from '../components/workcard/WorkCard'
+export { default as Work } from '../components/workcard/Work'
+export { default as AboutContent } from '../components/about/AboutContent'
+export { default as ContactForm } from '../components/contactform/ContactForm'
