@@ -47,7 +47,7 @@ export default function ContactForm() {
         <label>Drop a note</label>
         <textarea
           rows="6"
-          placeholder="type your text here"
+          placeholder="Type your text here..."
           /* value={formData.message} */
           type="text"
           /* required */

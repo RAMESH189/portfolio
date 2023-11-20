@@ -23,6 +23,7 @@
 
 .location {
   display: flex;
+  align-items: center;
   margin-bottom: 0.8rem;
 }
 
@@ -32,11 +33,13 @@
 
 .contact {
   display: flex;
+  align-items: center;
   margin-bottom: 0.8rem;
 }
 
 .mail {
   display: flex;
+  align-items: center;
   margin-bottom: 0.8rem;
 }
 
@@ -50,6 +53,10 @@
 
 .social {
   margin-top: 1rem;
+}
+
+.social div:hover {
+  background-color: orange;
 }
 
 h4 {
