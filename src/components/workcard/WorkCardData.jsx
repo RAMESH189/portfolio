@@ -3,6 +3,7 @@ import project2 from "../../assets/project2.png"
 import project3 from "../../assets/project3.png"
 import project4 from "../../assets/project4.png"
 import project5 from "../../assets/project5.png"
+import project6 from "../../assets/project6.png"
 
 const WorkCardData = [
     {
@@ -39,6 +40,13 @@ const WorkCardData = [
         description: "This is a social media api i developed using NodeJS and express.",
         viewUrl: '',
         sourceUrl: 'https://github.com/RAMESH189/PostNow---API',
+    },
+    {
+        imgsrc: project6,
+        title: 'Fitness-App' ,
+        description: "Fitness App made utilising Meterial UI and Rapid API",
+        viewUrl: 'https://gymbro-app.netlify.app/',
+        sourceUrl: 'https://github.com/RAMESH189/gym-app',
     }
 ]
 
