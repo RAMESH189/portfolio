@@ -1,61 +1,61 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./contactform.css";
+import emailjs from "@emailjs/browser";
 export default function ContactForm() {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     subject: '',
-//     message: '',
-//   })
+  const form = useRef();
+  const [done, setDone] = useState(false);
 
-//   const onFormUpdate = (category, value) => {
-//    setFormData(prevData => ({
-//      ...prevData,
-//      [category]: value
-//    }));
-// }
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-//  const handleSubmit = async (e) => {
-//     e.preventDefault();
-    
-//     let response = await fetch("http://localhost:5000/contact", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json;charset=utf-8",
-//       },
-//       body: JSON.stringify(formData),
-//     });
-  
-//     let result = await response.json();
-//     setFormData(formData);
-//     if (result.code === 200) {
-//       console.log('success');
-//     } else {
-//       console.log('error');
-//     }
-//   };
-  
+    emailjs
+      .sendForm(
+        "service_ua40nmf",
+        "template_7h0g6z4",
+        form.current,
+        "bOLzQCK35NNwyXcdJ"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setDone(true);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <div className="form">
-      <form /*onSubmit={handleSubmit}*/>
+      <form ref={form} className="form" onSubmit={handleSubmit}>
         <label> Your Name</label>
-        <input type="text" /* value={formData.name} onChange={(e) => onFormUpdate('name', e.target.value)} required */ />
+        <input
+          className="user"
+          type="text"
+          placeholder="Name"
+          name="user_name"
+        />
         <label>Email</label>
-        <input type="email" /* value={formData.email} onChange={(e) => onFormUpdate('email', e.target.value)} required */ />
+        <input
+          className="user"
+          type="email"
+          placeholder="Email"
+          name="user_email"
+        />
         <label>Subject</label>
-        <input type="text" /* value={formData.subject} onChange={(e) => onFormUpdate('subject', e.target.value)} required */ />
+        <input type="text" />
         <label>Drop a note</label>
         <textarea
+          name="message"
           rows="6"
           placeholder="Type your text here..."
-          /* value={formData.message} */
           type="text"
-          /* required */
-          /* onChange={(e) => onFormUpdate('message', e.target.value)} */
         />
         <button type="submit" className="btn">
           Submit
         </button>
+        <span>{done ? "Thanks for contacting me" : ""}</span>
       </form>
     </div>
   );
